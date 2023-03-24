@@ -7,11 +7,11 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 import { useNavigate } from "react-router-dom"
 
 export default function MultiActionAreaCard({data, url}) {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea onClick = {() => {
-        navigate(url + data.idMovie);
+        navigate(`${url}${data.idMovie || data.idCharacter}`);
       }}>
         <CardMedia
           component="img"
@@ -21,8 +21,13 @@ export default function MultiActionAreaCard({data, url}) {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {data.title}
+            {data.title || data.name}
           </Typography>
+          {data.role ? (
+          <Typography variant="body2" color="text.secondary">
+            {data.role}
+          </Typography>)
+           : <></>}
         </CardContent>
       </CardActionArea>
       <CardActions>

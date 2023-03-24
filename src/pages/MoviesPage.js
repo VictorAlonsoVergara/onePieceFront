@@ -7,7 +7,7 @@ export function MoviesPage(){
     return (       
         <div>             
             {movies.map(data => (
-                <MultiActionAreaCard data = {data} url = "/characters/"/>
+                <MultiActionAreaCard data = {data} url = "/characters/" key = {data.idMovie}/>
             ))}
         </div>
     );

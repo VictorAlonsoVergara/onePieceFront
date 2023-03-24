@@ -1,12 +1,23 @@
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom"
+import { useContext, useEffect, useState } from "react"
 import { Context } from "../context/OnePieceContext";
+import MultiActionAreaCard from "../component/MultiActionAreaCard"
+import { useParams } from "react-router-dom";
 
-export function CharactersPage({id}){
+export function CharactersPage(){
     const {getCharacters} = useContext(Context);
-    console.log(getCharacters(id));
-
+    const [characters, setCharacters] = useState([]);
+    const params = useParams();
+    useEffect( () => {
+        (async () => {
+            const data = await getCharacters(params.id);
+            setCharacters(data);
+        })()
+    }, [params.id, getCharacters])
     return (
-        <div> Hola mundo </div>
+        <div>             
+            {characters.map(data => (
+                <MultiActionAreaCard data = {data} url = "/fullcharacters/" key = {data.idCharacter}/>
+            ))}
+        </div>
     );
 }
