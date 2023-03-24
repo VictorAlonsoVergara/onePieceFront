@@ -13,8 +13,8 @@ function App() {
       <OnePieceContext>
         <Routes>
           <Route path='/' element={<MoviesPage/>}/>
-          <Route path='/characters' element={<CharactersPage/>}/>
-          <Route path='/fullCharacters' element={<FullCharacterPage/>}/>
+          <Route path='/characters/:id' element={<CharactersPage/>}/>
+          <Route path='/fullCharacters/:id' element={<FullCharacterPage/>}/>
           <Route path='*' element={<NotFound/>}/>
         </Routes>
       </OnePieceContext>
