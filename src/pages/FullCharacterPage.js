@@ -3,7 +3,7 @@ import { Context } from "../context/OnePieceContext";
 import MultiActionAreaCard from "../component/MultiActionAreaCard"
 import { useParams } from "react-router-dom";
 
-export function FullCharacterPage({id}){
+export function FullCharacterPage(){
     const {getFullCharacters} = useContext(Context);
     const [fullCharacters, setFullCharacters] = useState([]);
     const params = useParams();
@@ -13,12 +13,9 @@ export function FullCharacterPage({id}){
             setFullCharacters(data);
         })()
     }, [params.id, getFullCharacters])
-    console.log(fullCharacters);
     return (
         <div>             
-            {fullCharacters.map(data => (
-                <MultiActionAreaCard data = {data} url = "/fullcharacters/" key = {data.idCharacter}/>
-            ))}
+            <MultiActionAreaCard data = {fullCharacters} url = "/fullcharacters/"/>
         </div>
     );
 }

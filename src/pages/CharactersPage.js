@@ -13,6 +13,9 @@ export function CharactersPage(){
             setCharacters(data);
         })()
     }, [params.id, getCharacters])
+    if(characters.length === 0){
+        return <div>"No se encontraron resultados"</div>;
+    }
     return (
         <div>             
             {characters.map(data => (
