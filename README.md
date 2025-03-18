@@ -7,7 +7,7 @@ A continuación, se describe la información de las pantallas:
 
 - La primera pantalla muestra un listado de las películas en formato cards con la imagen de la película, el título y un enlace de información completa que redirige al url brindado como dato. Adicionalmente al presionar la imagen o el texto de la película se redirige a la segunda pantalla. Para acceder a la primera pantalla es a través del siguiente endpoint:
 ```
-/
+/movies
 ```
 - La segunda pantalla muestra un listado de los personajes en formato cards con la imagen del personaje, el nombre, el rol y un enlace de información completa que redirige al url brindado como dato. Adicionalmente al presionar la imagen o el texto del personaje se redirige a la tercera pantalla. Para acceder a la segunda pantalla es a través del siguiente endpoint:
 ```
